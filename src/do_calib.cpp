@@ -39,7 +39,7 @@
  * Class for performing IMU calibration
  */
 
-#include "imu_calib/do_calib.h"
+#include "mobi_imu_cal/do_calib.h"
 
 namespace imu_calib
 {

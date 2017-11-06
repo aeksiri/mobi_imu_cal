@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(imu_calib)
+project(mobi_imu_cal)
 
 find_package(catkin REQUIRED COMPONENTS
   cmake_modules
   roscpp
   sensor_msgs
-  lino_msgs
+  mobi_msgs
 )
 
 find_package(Eigen REQUIRED)
@@ -18,7 +18,7 @@ pkg_check_modules(YAML yaml-cpp)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES accel_calib
-  CATKIN_DEPENDS cmake_modules roscpp sensor_msgs lino_msgs
+  CATKIN_DEPENDS cmake_modules roscpp sensor_msgs mobi_msgs
   DEPENDS Eigen yaml-cpp
 )
 

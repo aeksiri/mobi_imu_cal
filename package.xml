@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>imu_calib</name>
+  <name>mobi_imu_calib</name>
   <version>0.0.0</version>
   <description>Package for computing and applying IMU calibrations</description>
 
   <author email="daniel.p.koch@gmail.com">Daniel Koch</author>
-  <maintainer email="daniel.p.koch@gmail.com">Daniel Koch</maintainer>
+  <maintainer email="akkharaphong.e@bu.ac.th">Akkharaphong EKSIRI</maintainer>
 
   <license>BSD</license>
 
@@ -20,6 +20,6 @@
   <depend>roscpp</depend>
   <depend>sensor_msgs</depend>
   <depend>yaml-cpp</depend>
-  <depend>lino_msgs</depend>
+  <depend>mobi_msgs</depend>
 
 </package>

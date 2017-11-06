@@ -41,7 +41,7 @@
 
 #include <ros/ros.h>
 
-#include "imu_calib/do_calib.h"
+#include "mobi_imu_cal/do_calib.h"
 
 int main(int argc, char** argv)
 {

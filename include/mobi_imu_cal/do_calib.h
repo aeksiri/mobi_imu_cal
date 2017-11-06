@@ -33,43 +33,52 @@
 *********************************************************************/
 
 /**
- * \file apply_calib.h
+ * \file do_calib.h
  * \author Daniel Koch <daniel.p.koch@gmail.com>
  *
- * Class for applying a previously computed calibration to IMU data
+ * Class for performing IMU calibration
  */
 
 #include <ros/ros.h>
-#include <lino_msgs/Imu.h>
-#include <sensor_msgs/Imu.h>
-#include <sensor_msgs/MagneticField.h>
 
-#include <imu_calib/accel_calib.h>
+#include <mobi_msgs/Imu.h>
+
+#include <string>
+#include <vector>
+#include <queue>
+
+#include <mobi_imu_cal/accel_calib.h>
 
 namespace imu_calib
 {
 
-class ApplyCalib
+class DoCalib
 {
 public:
-  ApplyCalib();
+  DoCalib();
+
+  bool running();
 
 private:
+  enum DoCalibState { START, SWITCHING, RECEIVING, COMPUTING, DONE };
+
   AccelCalib calib_;
 
-  ros::Subscriber raw_sub_;
-  ros::Publisher corrected_pub_;
-  ros::Publisher mag_pub_;
+  DoCalibState state_;
 
-  void rawImuCallback(lino_msgs::Imu::ConstPtr raw);
+  int measurements_per_orientation_;
+  int measurements_received_;
 
-  bool calibrate_gyros_;
-  int gyro_calib_samples_;
-  int gyro_sample_count_;
+  double reference_acceleration_;
+  std::string output_file_;
 
-  double gyro_bias_x_;
-  double gyro_bias_y_;
-  double gyro_bias_z_;
+  std::queue<AccelCalib::Orientation> orientations_;
+  AccelCalib::Orientation current_orientation_;
+
+  std::string orientation_labels_[6];
+
+  ros::Subscriber imu_sub_;
+  void imuCallback(lino_msgs::Imu::ConstPtr imu);
 };
 
 } // namespace accel_calib

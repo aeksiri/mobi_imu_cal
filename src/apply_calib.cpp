@@ -39,7 +39,7 @@
  * Class for applying a previously computed calibration to IMU data
  */
 
-#include "imu_calib/apply_calib.h"
+#include "mobi_imu_cal/apply_calib.h"
 
 namespace imu_calib
 {
@@ -54,7 +54,7 @@ ApplyCalib::ApplyCalib() :
   ros::NodeHandle nh_private("~");
 
   std::string calib_file;
-  nh_private.param<std::string>("calib_file", calib_file, "imu_calib.yaml");
+  nh_private.param<std::string>("calib_file", calib_file, "mobi_imu_cal.yaml");
 
   if (!calib_.loadCalib(calib_file) || !calib_.calibReady())
   {

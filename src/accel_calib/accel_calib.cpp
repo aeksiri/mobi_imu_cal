@@ -39,7 +39,7 @@
  * Class for calculating and applying accelerometer calibration parameters
  */
 
-#include "imu_calib/accel_calib.h"
+#include "mobi_imu_cal/accel_calib.h"
 
 #include <yaml-cpp/yaml.h>
 
