@@ -78,7 +78,7 @@ private:
   std::string orientation_labels_[6];
 
   ros::Subscriber imu_sub_;
-  void imuCallback(lino_msgs::Imu::ConstPtr imu);
+  void imuCallback(mobi_msgs::Imu::ConstPtr imu);
 };
 
 } // namespace accel_calib
