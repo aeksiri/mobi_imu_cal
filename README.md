@@ -15,7 +15,7 @@ The underlying algorithm is a least-squares calibration approach based on and si
 #### Topics
 
 ##### Subscribed Topics
-- `raw_imu` (lino_msgs/Imu) <br>
+- `raw_imu` (mobi_msgs/Imu) <br>
   The raw, uncalibrated IMU measurements
 
 #### Parameters
@@ -32,7 +32,7 @@ Applies the accelerometer calibration parameters computed by the do_calib node. 
 #### Topics
 
 ##### Subscribed Topics
-- `raw_imu` (lino_msgs/Imu) <br>
+- `raw_imu` (mobi_msgs/Imu) <br>
   The raw, uncalibrated IMU measurements
 
 ##### Published Topics
