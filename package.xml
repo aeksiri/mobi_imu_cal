@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>mobi_imu_calib</name>
+  <name>mobi_imu_cal</name>
   <version>0.0.0</version>
   <description>Package for computing and applying IMU calibrations</description>
 
